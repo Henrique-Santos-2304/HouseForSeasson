@@ -14,13 +14,19 @@
         android:theme="@style/Theme.HouseForSeasson"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:name=".activitys.LoginActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".activitys.MainActivity"
+            android:exported="true">
+
         </activity>
     </application>
 

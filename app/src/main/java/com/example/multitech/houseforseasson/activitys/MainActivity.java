@@ -1,8 +1,10 @@
-package com.example.multitech.houseforseasson;
+package com.example.multitech.houseforseasson.activitys;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.multitech.houseforseasson.R;
 
 public class MainActivity extends AppCompatActivity {
 
