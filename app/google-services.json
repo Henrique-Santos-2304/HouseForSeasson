@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "117840657179",
+    "project_id": "houseforseasson",
+    "storage_bucket": "houseforseasson.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:117840657179:android:906593019eadfe62dcb1be",
+        "android_client_info": {
+          "package_name": "com.example.multitech.houseforseasson"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "117840657179-nl11ssrn3lq69m6hglrdd0mfdbhn1thg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.multitech.houseforseasson",
+            "certificate_hash": "1ebd4d4e7ee64553919baa4b5e7847886dd3f5f3"
+          }
+        },
+        {
+          "client_id": "117840657179-ogqr1raugiuop79ugq69k7oii2bvdrk0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDyTKYw_bZKcz-hj-mTSTBVtoX2g7NQJpU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "117840657179-ogqr1raugiuop79ugq69k7oii2bvdrk0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
