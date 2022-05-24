@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".activitys.SignUpActivity">
+
+    <include layout="@layout/toolbar_goback"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        >
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            >
+            <EditText
+                android:id="@+id/signup_input_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/input_rounded"
+                android:padding="18dp"
+                android:hint="Nome"
+                android:textSize="18sp"
+                android:textColorHint="@color/txtHint"
+                android:textColor="@color/txtInput"
+                />
+            <EditText
+                android:id="@+id/signup_input_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/input_rounded"
+                android:padding="18dp"
+                android:hint="Email"
+                android:textSize="18sp"
+                android:textColorHint="@color/txtHint"
+                android:textColor="@color/txtInput"
+                />
+            <EditText
+                android:id="@+id/signup_input_telephone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/input_rounded"
+                android:padding="18dp"
+                android:hint="Telefone"
+                android:textSize="18sp"
+                android:textColorHint="@color/txtHint"
+                android:textColor="@color/txtInput"
+                />
+            <EditText
+                android:id="@+id/signup_input_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/input_rounded"
+                android:padding="18dp"
+                android:hint="Senha"
+                android:textSize="18sp"
+                android:textColorHint="@color/txtHint"
+                android:textColor="@color/txtInput"
+                />
+
+            <Button
+                android:id="@+id/signup_btn_sendsignup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/input_rounded"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="16dp"
+                app:backgroundTint="@color/bg_primary"
+                android:text="Cadastrar"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                />
+
+            <TextView
+                android:id="@+id/signup_txt_gologin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="Fazer Login"
+                android:textSize="12sp"
+                android:textColor="@color/bg_primary"
+                android:padding="8dp"
+                android:textAlignment="textEnd"
+                />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
