@@ -1,4 +1,4 @@
-package com.example.multitech.houseforseasson.activitys;
+package com.example.multitech.houseforseasson.activitys.authentication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,6 +11,7 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.multitech.houseforseasson.R;
+import com.example.multitech.houseforseasson.activitys.authentication.LoginActivity;
 import com.example.multitech.houseforseasson.database.models.User;
 import com.example.multitech.houseforseasson.database.repository.authentication.CallbackCreateUser;
 import com.example.multitech.houseforseasson.database.repository.authentication.UserAuthDao;

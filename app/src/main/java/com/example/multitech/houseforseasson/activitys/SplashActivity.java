@@ -9,6 +9,7 @@ import android.os.Looper;
 import android.widget.Toast;
 
 import com.example.multitech.houseforseasson.R;
+import com.example.multitech.houseforseasson.activitys.authentication.LoginActivity;
 import com.example.multitech.houseforseasson.database.repository.FirebaseHelper;
 
 public class SplashActivity extends AppCompatActivity {

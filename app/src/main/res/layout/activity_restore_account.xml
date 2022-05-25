@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".activitys.RestoreAccountActivity">
+    tools:context=".activitys.authentication.RestoreAccountActivity">
 
     <include layout="@layout/toolbar_goback"
         android:id="@+id/restore_account_toolbar"

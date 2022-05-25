@@ -4,7 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable-v24/ic_goback_white.xml" value="0.1205" />
+        <entry key="app/src/main/res/drawable/ic_baseline_check_24.xml" value="0.1205" />
+        <entry key="app/src/main/res/drawable/ic_photo.xml" value="0.1205" />
         <entry key="app/src/main/res/drawable/input_rounded.xml" value="0.1205" />
+        <entry key="app/src/main/res/drawable/input_rounded_forms_annoucement.xml" value="0.1205" />
+        <entry key="app/src/main/res/layout/activity_form_announcement.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/activity_restore_account.xml" value="0.19322916666666667" />

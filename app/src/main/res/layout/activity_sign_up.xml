@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".activitys.SignUpActivity">
+    tools:context=".activitys.authentication.SignUpActivity">
 
     <include layout="@layout/toolbar_goback"
         app:layout_constraintTop_toTopOf="parent"

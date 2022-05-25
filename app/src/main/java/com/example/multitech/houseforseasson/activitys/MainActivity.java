@@ -7,6 +7,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.multitech.houseforseasson.R;
+import com.example.multitech.houseforseasson.activitys.authentication.LoginActivity;
 import com.example.multitech.houseforseasson.database.repository.authentication.UserAuthDao;
 import com.example.multitech.houseforseasson.protocols.ViewMethods;
 
@@ -36,6 +37,10 @@ public class MainActivity extends AppCompatActivity implements ViewMethods {
             this.userAuthDao.signOut();
             finish();
             startActivity(new Intent(this, LoginActivity.class));
+        });
+
+        findViewById(R.id.main_btn_addannouncement).setOnClickListener(v -> {
+            startActivity(new Intent(this, FormAnnouncementActivity.class));
         });
     }
 }

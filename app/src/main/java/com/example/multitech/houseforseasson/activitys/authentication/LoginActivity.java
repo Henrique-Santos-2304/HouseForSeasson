@@ -1,4 +1,4 @@
-package com.example.multitech.houseforseasson.activitys;
+package com.example.multitech.houseforseasson.activitys.authentication;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -7,13 +7,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.multitech.houseforseasson.R;
-import com.example.multitech.houseforseasson.database.models.User;
+import com.example.multitech.houseforseasson.activitys.MainActivity;
 import com.example.multitech.houseforseasson.database.repository.authentication.CallbackLoginAuth;
 import com.example.multitech.houseforseasson.database.repository.authentication.UserAuthDao;
 import com.example.multitech.houseforseasson.protocols.ViewMethods;

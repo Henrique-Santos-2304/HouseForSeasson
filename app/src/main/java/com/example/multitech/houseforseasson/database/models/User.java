@@ -1,5 +1,9 @@
 package com.example.multitech.houseforseasson.database.models;
 
+import com.example.multitech.houseforseasson.database.repository.FirebaseHelper;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.Exclude;
+
 public class User {
     private String id;
     private String name;
@@ -40,6 +44,7 @@ public class User {
         this.email = email;
     }
 
+    @Exclude
     public String getPassword() {
         return password;
     }

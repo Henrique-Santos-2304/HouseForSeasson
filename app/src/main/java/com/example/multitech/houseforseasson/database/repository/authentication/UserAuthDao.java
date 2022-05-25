@@ -2,6 +2,7 @@ package com.example.multitech.houseforseasson.database.repository.authentication
 
 import com.example.multitech.houseforseasson.database.models.User;
 import com.example.multitech.houseforseasson.database.repository.FirebaseHelper;
+import com.google.firebase.database.DatabaseReference;
 
 public class UserAuthDao {
     public void userLogin(String email, String password, CallbackLoginAuth callbackLoginAuth){
@@ -12,6 +13,18 @@ public class UserAuthDao {
                 .addOnFailureListener(err -> { callbackLoginAuth.loginFailTask(err);});
     }
 
+
+    private boolean createUserDb(User user){
+        try{
+            DatabaseReference dbRef = FirebaseHelper.getDbReference().child("users").child(user.getId());
+            dbRef.setValue(user);
+            return Boolean.TRUE;
+        }
+        catch(Exception err){
+            return Boolean.FALSE;
+        }
+    }
+
     public void createUser(User user, CallbackCreateUser callbackCreateUser){
         String email = user.getEmail();
         String password = user.getPassword();
@@ -20,7 +33,14 @@ public class UserAuthDao {
                 .getAuth()
                 .createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(task -> {
-                    callbackCreateUser.saveUserSucess(task);
+                    String userId = task.getResult().getUser().getUid();
+                    user.setId(userId);
+
+                    boolean created = this.createUserDb(user);
+
+                    if(created) callbackCreateUser.saveUserSucess(task);
+                    else callbackCreateUser.saveUserFaillure(new Exception("Does not possible saved user in database"));
+
                 })
                 .addOnFailureListener(err -> {
                     callbackCreateUser.saveUserFaillure(err);
