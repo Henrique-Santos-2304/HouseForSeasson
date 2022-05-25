@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".activitys.RestoreAccountActivity">
+
+    <include layout="@layout/toolbar_goback"
+        android:id="@+id/restore_account_toolbar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/restoreaccount_txt_msg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/restore_account_toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Insira seu e-mail abaixo para receber um link \n e poder alterar a senha da conta"
+        android:textColor="@color/bg_primary"
+        android:layout_marginTop="28dp"
+        android:textAlignment="center"
+        />
+
+    <EditText
+        android:id="@+id/restoreaccount_input_email"
+        app:layout_constraintTop_toBottomOf="@+id/restoreaccount_txt_msg"
+        app:layout_constraintStart_toStartOf="@+id/restoreaccount_txt_msg"
+        app:layout_constraintEnd_toEndOf="@+id/restoreaccount_txt_msg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/input_rounded"
+        android:padding="18dp"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:textSize="18sp"
+        android:textColorHint="@color/txtHint"
+        android:textColor="@color/txtInput"
+        />
+
+    <Button
+        android:id="@+id/restoreaccount_btn_sendrestore"
+        app:layout_constraintTop_toBottomOf="@id/restoreaccount_input_email"
+        app:layout_constraintStart_toStartOf="@+id/restoreaccount_input_email"
+        app:layout_constraintEnd_toEndOf="@+id/restoreaccount_input_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/input_rounded"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="28dp"
+        app:backgroundTint="@color/bg_primary"
+        android:text="Entrar"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        />
+
+    <ProgressBar
+        app:layout_constraintTop_toBottomOf="@+id/restoreaccount_btn_sendrestore"
+        app:layout_constraintStart_toStartOf="@+id/restoreaccount_btn_sendrestore"
+        app:layout_constraintEnd_toEndOf="@+id/restoreaccount_btn_sendrestore"
+        android:id="@+id/restoreaccount_progressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminateTint="@color/bg_primary"
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:layout_marginTop="28dp"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

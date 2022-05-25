@@ -111,6 +111,16 @@
                 android:textAlignment="textEnd"
                 />
 
+            <ProgressBar
+                android:id="@+id/signup_progressbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminateTint="@color/bg_primary"
+                android:layout_marginTop="24dp"
+                android:visibility="gone"
+                tools:visibility="visible"
+                />
+
         </androidx.appcompat.widget.LinearLayoutCompat>
 
     </ScrollView>
