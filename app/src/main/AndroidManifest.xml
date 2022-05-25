@@ -14,23 +14,33 @@
         android:theme="@style/Theme.HouseForSeasson"
         tools:targetApi="31">
         <activity
-            android:name=".activitys.RestoreAccountActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activitys.SignUpActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activitys.LoginActivity"
-            android:exported="true">
+            android:name=".activitys.SplashActivity"
+            android:exported="true" >
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
+
+        <activity
+            android:name=".activitys.LoginActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".activitys.SignUpActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".activitys.RestoreAccountActivity"
+            android:exported="false" />
+
         <activity
             android:name=".activitys.MainActivity"
-            android:exported="true" />
+            android:exported="false" />
+
     </application>
 
 </manifest>
