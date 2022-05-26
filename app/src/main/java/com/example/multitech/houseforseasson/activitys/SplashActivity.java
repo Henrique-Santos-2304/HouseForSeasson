@@ -24,11 +24,7 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     private void checkAuthUser(){
-        if(FirebaseHelper.userIsAuth()){
-            startActivity(new Intent(this, MainActivity.class));
-        }else{
-            Toast.makeText(this, "Por favor faça login", Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(this, LoginActivity.class));
-        }
+        startActivity(new Intent(this, MainActivity.class));
+
     }
 }

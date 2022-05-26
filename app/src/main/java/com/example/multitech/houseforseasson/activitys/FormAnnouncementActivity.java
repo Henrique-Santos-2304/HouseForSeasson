@@ -117,6 +117,7 @@ public class FormAnnouncementActivity extends AppCompatActivity implements ViewM
             this.announcement.setBethroom(Integer.parseInt(this.txtBethroom));
             this.announcement.setBedroom(Integer.parseInt(this.txtBedroom));
             this.announcement.setGarage(Integer.parseInt(this.txtGarage));
+            this.announcement.setDisponibility(this.disponibility.isChecked());
 
             if(this.urlImg == null){
                 this.imgProfile.requestFocus();

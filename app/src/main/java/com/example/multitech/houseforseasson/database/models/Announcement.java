@@ -11,11 +11,20 @@ public class Announcement {
     private Integer bethroom;
     private Integer bedroom;
     private Integer garage;
+    private boolean disponibility;
 
     public Announcement() {
         DatabaseReference dbRef = FirebaseHelper.getDbReference();
         String id = dbRef.push().getKey();
         this.setId(id);
+    }
+
+    public boolean isDisponibility() {
+        return disponibility;
+    }
+
+    public void setDisponibility(boolean disponibility) {
+        this.disponibility = disponibility;
     }
 
     public String getId() {
