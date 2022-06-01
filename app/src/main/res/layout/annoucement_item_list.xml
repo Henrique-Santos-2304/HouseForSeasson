@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:cardCornerRadius="5dp"
+        android:elevation="1dp"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+            <ImageView
+                android:id="@+id/item_img_annoucement"
+                android:layout_width="120dp"
+                android:layout_height="0dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_launcher_background"
+                />
+
+            <TextView
+                android:id="@+id/item_title_announcement"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/item_img_annoucement"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="Casa por temporada"
+                android:textStyle="bold|italic"
+                android:textSize="22sp"
+                android:textColor="@color/black"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
+                />
+
+            <TextView
+                android:id="@+id/item_description_announcement"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@id/item_title_announcement"
+                app:layout_constraintTop_toBottomOf="@id/item_title_announcement"
+                app:layout_constraintStart_toStartOf="@id/item_title_announcement"
+                tools:text="Casa por temporada assadsdasdasdagora vai uma casa muito bacana de verdade "
+                android:textSize="15sp"
+                android:textColor="#3E3D3D"
+                android:maxLines="3"
+                android:ellipsize="end"
+                />
+            <TextView
+                android:id="@+id/item_date_announcement"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/item_title_announcement"
+                app:layout_constraintEnd_toEndOf="@id/item_title_announcement"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:text="22/03/2022 às 15:34:22"
+                android:textSize="16sp"
+                android:textColor="#3E3D3D"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
