@@ -1,5 +1,6 @@
 package com.example.multitech.houseforseasson.activitys;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -12,6 +13,7 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.multitech.houseforseasson.R;
 import com.example.multitech.houseforseasson.adapters.AdapterAnnouncement;
@@ -100,13 +102,31 @@ public class MyAnnouncementsActivity extends AppCompatActivity implements ViewMe
             @Override
             public void onSwipedRight(int position) {
                 Announcement announcement = announcementList.get(position);
-                announcementList.remove(position);
-                fbDao.deleteAnnouncement(announcement.getId());
-                adapterAnnouncement.notifyItemRemoved(position);
-
-                verifyListIsNotEmpty();
+                showDialogDelete(announcement,position);
             }
         });
+    }
+
+    private void showDialogDelete(Announcement announcement, int position){
+        AlertDialog.Builder builderDialog = new AlertDialog.Builder(this)
+                .setTitle("Ação destrutiva \n Você perderá esses dados")
+                .setMessage("Tem certeza que deseja deletar")
+                .setNegativeButton("Não", (dis, i) -> {
+                    Toast.makeText(this, "Ação cancelada.", Toast.LENGTH_SHORT).show();
+                    adapterAnnouncement.notifyItemChanged(position);
+                    dis.dismiss();
+                })
+                .setPositiveButton("Sim", (dism, i) -> deleteAnnouncement(announcement, position));
+
+        builderDialog.create().show();
+    }
+
+    private void deleteAnnouncement(Announcement announcement, int position) {
+        announcementList.remove(position);
+        fbDao.deleteAnnouncement(announcement.getId());
+        adapterAnnouncement.notifyItemRemoved(position);
+
+        verifyListIsNotEmpty();
     }
 
     private void verifyListIsNotEmpty(){
