@@ -3,7 +3,9 @@ package com.example.multitech.houseforseasson.database.models;
 import com.example.multitech.houseforseasson.database.repository.FirebaseHelper;
 import com.google.firebase.database.DatabaseReference;
 
-public class Announcement {
+import java.io.Serializable;
+
+public class Announcement implements Serializable {
     private String id;
     private String title;
     private String urlImg;

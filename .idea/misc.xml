@@ -4,7 +4,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Henrique/Documents/android/HouseForSeasson/app/src/main/res/layout/activity_main.xml" value="0.16847826086956522" />
-        <entry key="..\:/Users/Henrique/Documents/android/HouseForSeasson/app/src/main/res/layout/annoucement_item_list.xml" value="0.16847826086956522" />
+        <entry key="..\:/Users/Henrique/Documents/android/HouseForSeasson/app/src/main/res/layout/activity_my_announcements.xml" value="0.25" />
+        <entry key="..\:/Users/Henrique/Documents/android/HouseForSeasson/app/src/main/res/layout/annoucement_item_list.xml" value="0.25" />
         <entry key="app/src/main/res/drawable-v24/ic_goback_white.xml" value="0.1205" />
         <entry key="app/src/main/res/drawable/ic_baseline_check_24.xml" value="0.1205" />
         <entry key="app/src/main/res/drawable/ic_photo.xml" value="0.1205" />

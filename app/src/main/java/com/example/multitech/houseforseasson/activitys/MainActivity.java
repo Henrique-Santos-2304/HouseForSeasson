@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity implements ViewMethods {
             startActivity(new Intent(this, FilterAnnoucementActivity.class));
         }else if(idMenu == R.id.menu_my_announcements){
             if(FirebaseHelper.userIsAuth()){
-                startActivity(new Intent(this, FormAnnouncementActivity.class));
+                startActivity(new Intent(this, MyAnnouncementsActivity.class));
             }
             else this.showDialog();
 

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_primary"
+    tools:context=".activitys.MyAnnouncementsActivity">
+
+    <include layout="@layout/toolbar_goback"
+        android:id="@+id/myannouncement_toolbar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <ImageButton
+        android:id="@+id/myannouncement_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/myannouncement_toolbar"
+        app:layout_constraintBottom_toBottomOf="@id/myannouncement_toolbar"
+        android:src="@drawable/ic_add"
+        android:background="@android:color/transparent"
+        android:layout_marginEnd="12dp"
+        android:scaleType="centerCrop"
+        />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/not_announcement"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:orientation="vertical"
+        android:gravity="center"
+        >
+        <ProgressBar
+            android:id="@+id/progress_bar_not_announcement"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            tools:visibility="visible"
+            android:indeterminateTint="@color/white"
+            android:layout_marginBottom="16dp"
+
+            />
+
+        <TextView
+            android:id="@+id/txt_not_announcement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Carregando anúncios..."
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar_app"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:visibility="gone"
+            />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <com.tsuryo.swipeablerv.SwipeableRecyclerView
+        android:id="@+id/rv_announcements"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/myannouncement_toolbar"
+        app:leftBgColor="@color/red"
+        app:leftImage="@drawable/ic_delete_rv"
+        app:leftText="Excluir"
+        app:rightBgColor="@color/design_default_color_secondary"
+        app:rightImage="@drawable/ic_edit_rv"
+        app:rightText="Editar"
+        app:textColor="@android:color/white"
+        tools:itemCount="24"
+        android:padding="8dp"
+        tools:listitem="@layout/annoucement_item_list" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

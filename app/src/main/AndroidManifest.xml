@@ -16,6 +16,9 @@
         android:theme="@style/Theme.HouseForSeasson"
         tools:targetApi="31">
         <activity
+            android:name=".activitys.MyAnnouncementsActivity"
+            android:exported="false" />
+        <activity
             android:name=".activitys.MyAccountActivity"
             android:exported="false" />
         <activity
