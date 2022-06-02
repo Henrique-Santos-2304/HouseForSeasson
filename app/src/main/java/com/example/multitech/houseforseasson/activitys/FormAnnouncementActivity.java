@@ -99,7 +99,7 @@ public class FormAnnouncementActivity extends AppCompatActivity implements ViewM
         boolean descriptionNotEmpty = CheckInputValues.checkInputIsNotEmpty(this.txtDescription, this.description, "Informe a descrição do anúncio");
         boolean bethroomNotEmpty = CheckInputValues.checkInputIsNotEmpty(this.txtBethroom , this.bethroom, "Informe a quantidade de quartos");
         boolean bedroomNotEmpty = CheckInputValues.checkInputIsNotEmpty(this.txtBedroom, this.bedrooms, "Informe a quantidade de banheiros");
-        boolean garageNotEmpty = CheckInputValues.checkInputIsNotEmpty(this.txtGarage , this.garage, "Informe a uantidade de garagens");
+        boolean garageNotEmpty = CheckInputValues.checkInputIsNotEmpty(this.txtGarage , this.garage, "Informe a quantidade de garagens");
 
         if(titleNotEmpty && descriptionNotEmpty && bethroomNotEmpty && bedroomNotEmpty && garageNotEmpty){
             return Boolean.TRUE;
@@ -119,13 +119,19 @@ public class FormAnnouncementActivity extends AppCompatActivity implements ViewM
             this.announcement.setGarage(Integer.parseInt(this.txtGarage));
             this.announcement.setDisponibility(this.disponibility.isChecked());
 
-            if(this.urlImg == null){
-                this.imgProfile.requestFocus();
-                Toast.makeText( this, "Selecione uma imagem", Toast.LENGTH_SHORT).show();
-            }else{
+            if(this.urlImg != null ){
                 this.fbAnnoucementDao.saveImage(this.announcement, this.urlImg);
                 Toast.makeText(this, "Dados inseridos com sucesso", Toast.LENGTH_LONG).show();
                 finish();
+            }else{
+                if(this.announcement.getUrlImg() != null){
+                    this.fbAnnoucementDao.saveAnnouncement(this.announcement);
+                    Toast.makeText(this, "Dados inseridos com sucesso", Toast.LENGTH_LONG).show();
+                    finish();
+                }else{
+                    Toast.makeText(this, "Selecione uma imagem", Toast.LENGTH_SHORT).show();
+                }
+
             }
         }
     }
@@ -137,13 +143,11 @@ public class FormAnnouncementActivity extends AppCompatActivity implements ViewM
         this.txtBedroom = String.valueOf(this.announcement.getBedroom());
         this.txtGarage = String.valueOf(this.announcement.getGarage());
 
-
         if(
             this.txtTitle.isEmpty() || this.txtDescription.isEmpty()
             || this.txtBethroom.isEmpty() || this.txtBedroom.isEmpty()
             || this.txtGarage.isEmpty() )
         {
-
             Log.i("AUTOSTOCK", "Campos Inválidos para editar anuncio");
         }
         else{
@@ -152,6 +156,7 @@ public class FormAnnouncementActivity extends AppCompatActivity implements ViewM
             this.bethroom.setText(this.txtBethroom);
             this.bedrooms.setText(this.txtBedroom);
             this.garage.setText(this.txtGarage);
+            this.disponibility.setChecked(this.announcement.isDisponibility());
 
             Picasso.get().load(this.announcement.getUrlImg()).into(this.imgProfile);
         }

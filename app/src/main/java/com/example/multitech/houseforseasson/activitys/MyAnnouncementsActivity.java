@@ -142,9 +142,10 @@ public class MyAnnouncementsActivity extends AppCompatActivity implements ViewMe
 
     @Override
     public void OnClickeListener(Announcement announcement) {
-//        Intent intent = new Intent(this, AddProductActivity.class);
-//        intent.putExtra("product", product);
-//        startActivity(intent);
+        Intent intent = new Intent(this, DetailAnnounceActivity.class);
+        intent.putExtra("announcement", announcement);
+
+        startActivity(intent);
     }
 
     private void getProducts(){

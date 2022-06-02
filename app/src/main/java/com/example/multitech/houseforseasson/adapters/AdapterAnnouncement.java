@@ -33,18 +33,18 @@ public class AdapterAnnouncement  extends RecyclerView.Adapter<AdapterAnnounceme
 
     @Override
     public void onBindViewHolder(@NonNull AnnouncementViewHolder holder, int position) {
-        Announcement announmcement = this.announcementList.get(position);
+        Announcement announcement = this.announcementList.get(position);
 
-        String announcementTitle = announmcement.getTitle();
-        String announcementDescription = announmcement.getDescription();
+        String announcementTitle = announcement.getTitle();
+        String announcementDescription = announcement.getDescription();
 //        String announcementDate = announmcement.;
-        Picasso.get().load(announmcement.getUrlImg()).into(holder.img_announcement);
+        Picasso.get().load(announcement.getUrlImg()).into(holder.img_announcement);
         holder.title.setText(announcementTitle);
         holder.description.setText(announcementDescription);
         holder.date.setText("23/04/1992 às 19:45");
 
         holder.itemView.setOnClickListener(view -> {
-            this.onclick.OnClickeListener(announmcement);
+            this.onclick.OnClickeListener(announcement);
         });
     }
 
