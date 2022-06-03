@@ -7,6 +7,7 @@ import java.io.Serializable;
 
 public class Announcement implements Serializable {
     private String id;
+    private String userId;
     private String title;
     private String urlImg;
     private String description;
@@ -83,5 +84,13 @@ public class Announcement implements Serializable {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String idUsuario) {
+        this.userId = idUsuario;
     }
 }

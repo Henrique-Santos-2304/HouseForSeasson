@@ -20,6 +20,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.multitech.houseforseasson.R;
 import com.example.multitech.houseforseasson.database.models.Announcement;
+import com.example.multitech.houseforseasson.database.repository.FirebaseHelper;
 import com.example.multitech.houseforseasson.database.repository.annoucements.FirebaseAnnoucementDAO;
 import com.example.multitech.houseforseasson.protocols.ViewMethods;
 import com.example.multitech.houseforseasson.utils.CheckInputValues;
@@ -111,7 +112,7 @@ public class FormAnnouncementActivity extends AppCompatActivity implements ViewM
 
         if(inputsNotEmpty){
             if(this.announcement == null) this.announcement =  new Announcement();
-
+            this.announcement.setUserId(FirebaseHelper.getUid());
             this.announcement.setTitle(this.txtTitle);
             this.announcement.setDescription(this.txtDescription);
             this.announcement.setBethroom(Integer.parseInt(this.txtBethroom));

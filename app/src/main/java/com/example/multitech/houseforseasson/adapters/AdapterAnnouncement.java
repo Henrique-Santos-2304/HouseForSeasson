@@ -1,5 +1,6 @@
 package com.example.multitech.houseforseasson.adapters;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +21,7 @@ public class AdapterAnnouncement  extends RecyclerView.Adapter<AdapterAnnounceme
     private final Onclick onclick;
 
     public AdapterAnnouncement(List<Announcement> announcementList, Onclick onclick) {
+
         this.announcementList = announcementList;
         this.onclick = onclick;
     }
@@ -35,6 +37,9 @@ public class AdapterAnnouncement  extends RecyclerView.Adapter<AdapterAnnounceme
     public void onBindViewHolder(@NonNull AnnouncementViewHolder holder, int position) {
         Announcement announcement = this.announcementList.get(position);
 
+        Log.i("APP", "Adapter Title: "+ announcement.getTitle());
+        Log.i("APP", "Adapter Description: "+ announcement.getDescription());
+
         String announcementTitle = announcement.getTitle();
         String announcementDescription = announcement.getDescription();
 //        String announcementDate = announmcement.;
@@ -43,9 +48,7 @@ public class AdapterAnnouncement  extends RecyclerView.Adapter<AdapterAnnounceme
         holder.description.setText(announcementDescription);
         holder.date.setText("23/04/1992 às 19:45");
 
-        holder.itemView.setOnClickListener(view -> {
-            this.onclick.OnClickeListener(announcement);
-        });
+        holder.itemView.setOnClickListener(view -> this.onclick.OnClickeListener(announcement));
     }
 
     @Override

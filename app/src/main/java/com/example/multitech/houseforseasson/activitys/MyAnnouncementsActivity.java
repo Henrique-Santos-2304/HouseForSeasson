@@ -49,26 +49,26 @@ public class MyAnnouncementsActivity extends AppCompatActivity implements ViewMe
         this.listeningClicks();
         this.configRvProduct();
     }
+
     @Override
     protected void onStart() {
         super.onStart();
-        this.progressBar.setVisibility(View.VISIBLE);
         this.linearNotAnnouncement.setVisibility(View.VISIBLE);
+        this.progressBar.setVisibility(View.VISIBLE);
         this.getProducts();
     }
+
     public void setComponents() {
+        this.fbDao = new FirebaseAnnoucementDAO();
+        this.announcementList = new ArrayList<>();
+
+        this.txtTitle = findViewById(R.id.toolbar_txt_title);
+        this.txtTitle.setText("Meus Anúncios");
+
         this.rvAnnouncement = findViewById(R.id.rv_announcements);
         this.linearNotAnnouncement = findViewById(R.id.not_announcement);
         this.txtNotAnnouncement = findViewById(R.id.txt_not_announcement);
         this.progressBar = findViewById(R.id.progress_bar_not_announcement);
-        this.txtTitle = findViewById(R.id.toolbar_txt_title);
-
-        this.txtTitle.setText("Meus Anúncios");
-
-
-//
-        this.fbDao = new FirebaseAnnoucementDAO();
-        this.announcementList = new ArrayList<>();
     }
 
     @Override
@@ -76,7 +76,7 @@ public class MyAnnouncementsActivity extends AppCompatActivity implements ViewMe
         findViewById(R.id.myannouncement_add).setOnClickListener(v -> {
             startActivity(new Intent(this, FormAnnouncementActivity.class));
         });
-        findViewById(R.id.toolbar_btn_goback).setOnClickListener(v -> { finish();});
+        findViewById(R.id.toolbar_btn_goback).setOnClickListener(v ->  finish());
     }
 
     private void configRvProduct(){
@@ -133,11 +133,12 @@ public class MyAnnouncementsActivity extends AppCompatActivity implements ViewMe
         if(this.announcementList.size() <= 0){
             this.txtNotAnnouncement.setText("Nenhum Anúncio Cadastrado");
             this.linearNotAnnouncement.setVisibility(View.VISIBLE);
+            this.rvAnnouncement.setVisibility(View.GONE);
         }else{
+            this.rvAnnouncement.setVisibility(View.VISIBLE);
             this.linearNotAnnouncement.setVisibility(View.GONE);
         }
         this.progressBar.setVisibility(View.GONE);
-
     }
 
     @Override
@@ -159,10 +160,8 @@ public class MyAnnouncementsActivity extends AppCompatActivity implements ViewMe
         this.announcementList.clear();
         this.announcementList.addAll(list);
 
-
         verifyListIsNotEmpty();
         Collections.reverse(this.announcementList);
         this.adapterAnnouncement.notifyDataSetChanged();
-
     }
 }
