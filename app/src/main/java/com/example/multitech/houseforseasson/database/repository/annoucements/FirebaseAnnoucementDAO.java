@@ -20,24 +20,27 @@ import java.util.List;
 import java.util.Objects;
 
 public class FirebaseAnnoucementDAO {
+    private DatabaseReference dbRef;
+    private StorageReference storageRef;
+
+    public FirebaseAnnoucementDAO() {
+        this.dbRef =  FirebaseHelper.getDbReference();
+        this.storageRef = FirebaseHelper.getStorageReference();
+    }
 
     public void saveAnnouncement(Announcement announcement){
         String idAnnouncement = announcement.getId();
-        DatabaseReference dbRef =
-                FirebaseHelper
-                        .getDbReference()
-                        .child("announcement")
-                        .child(idAnnouncement);
+        DatabaseReference dbQuery = this.dbRef
+                .child("announcement")
+                .child(idAnnouncement);
 
-        dbRef.setValue(announcement);
+        dbQuery.setValue(announcement);
     }
 
     public void findAnnouncementByUser(ViewCallback view, String userId){
         List<Announcement> mData = new ArrayList<>();
 
-        Query dbRef =
-                FirebaseHelper
-                        .getDbReference()
+        Query dbQuery = this.dbRef
                         .child("announcement").orderByChild("userId").equalTo(userId);
 
         ValueEventListener eventListener = new ValueEventListener() {
@@ -60,16 +63,13 @@ public class FirebaseAnnoucementDAO {
             }
 
         };
-        dbRef.addValueEventListener(eventListener);
+        dbQuery.addValueEventListener(eventListener);
     }
 
     public void findAnnouncement(ViewCallback view){
 
         List<Announcement> mData = new ArrayList<>();
-        DatabaseReference dbRef =
-                FirebaseHelper
-                        .getDbReference()
-                        .child("announcement");
+        DatabaseReference dbQuery = this.dbRef.child("announcement");
 
         ValueEventListener eventListener = new ValueEventListener() {
             @Override
@@ -92,29 +92,27 @@ public class FirebaseAnnoucementDAO {
 
         };
 
-        dbRef.addValueEventListener(eventListener);
+        dbQuery.addValueEventListener(eventListener);
 
     }
 
     public void deleteAnnouncement(String annoucementId){
-        DatabaseReference dbRef =
-                FirebaseHelper
-                        .getDbReference()
+        DatabaseReference dbQuery = this.dbRef
                         .child("announcement")
                         .child(annoucementId);
 
-        StorageReference storageReference = FirebaseHelper.getStorageReference()
+        StorageReference storageReference = this.storageRef
                 .child("images")
                 .child("announcement")
                 .child(FirebaseHelper.getUid())
                 .child(annoucementId + ".jpeg");
 
-        dbRef.removeValue();
+        dbQuery.removeValue();
         storageReference.delete();
     }
 
     public void saveImage(Announcement announcement, String urlImg){
-        StorageReference storageReference = FirebaseHelper.getStorageReference()
+        StorageReference storageReference = this.storageRef
                 .child("images")
                 .child("announcement")
                 .child(FirebaseHelper.getUid())

@@ -52,7 +52,7 @@ public class LoginActivity extends AppCompatActivity implements ViewMethods, Cal
             startActivity(new Intent(this, RestoreAccountActivity.class));
         });
         findViewById(R.id.login_btn_send).setOnClickListener(v -> {validatorData();});
-        findViewById(R.id.login_btn_goback).setOnClickListener(v -> {});
+        findViewById(R.id.login_btn_goback).setVisibility(View.GONE);
 
     }
 

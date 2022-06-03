@@ -24,7 +24,11 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     private void checkAuthUser(){
-        startActivity(new Intent(this, MainActivity.class));
+        if(FirebaseHelper.userIsAuth()){
+            startActivity(new Intent(this, MainActivity.class));
+        }else{
+            startActivity(new Intent(this, LoginActivity.class));
+        }
 
     }
 }
